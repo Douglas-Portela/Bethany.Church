@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Whitehorse | Bethany Church</title>
   <link rel="stylesheet" href="style.css"/>
@@ -10,7 +10,7 @@
   <div class="top-bar"></div>
   <header>
   <nav class="main-nav">
-    <a href="index.html#hero">Home</a>
+    <a href="index.html">Home</a>
     <div class="dropdown">
     <a href="about.html" class="dropdown-toggle">About</a>
     <div class="dropdown-menu">
@@ -28,11 +28,12 @@
       <a href="kidszone.html">Kids Zone</a>
       <a href="youthgroup.html">Youth Group</a>
       <a href="girlsclub.html">Girls Club</a>
+      <a href="outreach.html">Outreach.</a>
     </div>
     </div>
         <img src="pictures/Bethany_Logo.png" alt="Bethany Church" class="logo" />
     <div class="dropdown">
-       <a href="#Yukoncamp">Yukon Camp</a>
+       <a href="yukoncamp.html">Yukon Camp</a>
        <div class="dropdown-menu">
       <a href="kidscamp.html">Kids Camp</a>
       <a href="teemcamp.html">Teem Camp</a>
@@ -42,8 +43,8 @@
       <a href="bethanychurchretreat.html">Bethany Church Retreat</a>
     </div>
     </div>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+    <a href="#gallery.html">Gallery</a>
+    <a href="#contact.html">Contact</a>
   </nav>
 </header>
 
@@ -56,21 +57,22 @@
   <p>A family for you and your home.<br>Celebrate faith, hope, and love with us!</p>
 </section>
 
-  <section id="about">
-    <h2>About Our Church</h2>
-    <div class="about">
-      <p>
-        We are a vibrant, welcoming Christian community passionate about Jesus. Our purpose is to serve God, love people, and transform lives through the Gospel. Come be part of this family!
-      </p>
-    </div>
-  </section>
+<section id="about">
+  <h2>About Our Church</h2>
+  <div class="about">
+    <p>
+      We are a vibrant, welcoming Christian community passionate about Jesus. Our purpose is to serve God, love people, and transform lives through the Gospel. Come be part of this family!
+    </p>
+    <button class="more-button" onclick="window.location.href='about.html'">More...</button>
+  </div>
+</section>
 
   <section id="ministries">
     <h2>Ministries</h2>
     <div class="ministries-grid">
       <div class="ministry-card">
-        <img src="https://img.icons8.com/color/96/000000/children.png" alt="Kids Ministry"/>
-        <h3>Kids</h3>
+        <img src="https://img.icons8.com/color/96/000000/children.png" alt="Kids Zone"/>
+        <h3>Kids Zone</h3>
         <p>Biblical teaching and fun for children ages 4 to 12.</p>
       </div>
       <div class="ministry-card">
@@ -88,6 +90,26 @@
         <h3>Outreach</h3>
         <p>Community service and support projects.</p>
       </div>
+      <div class="ministry-card">
+        <img src="pictures/" alt="Soup Mammas"/>
+        <h3>Soup Mammas</h3>
+        <p>Community service and support projects.</p>
+      </div>
+        <div class="ministry-card">
+        <img src="pictures/" alt="Sunday School"/>
+        <h3>Sunday School</h3>
+        <p>Community service and support projects.</p>
+      </div>
+      <div class="ministry-card">
+        <img src="pictures/" alt="Life FM"/>
+        <h3>Life FM</h3>
+        <p>Community service and support projects.</p>
+      </div>
+      <div class="ministry-card">
+        <img src="pictures/" alt="Girls Club"/>
+        <h3>Girls Club</h3>
+        <p>Community service and support projects.</p>
+      </div>
     </div>
   </section>
 
@@ -99,7 +121,10 @@
           src="https://www.google.com/maps?q=91806+Alaska+Highway,+Whitehorse,+YT&output=embed"
           width="100%"
           height="300"
+          frameborder="0"
           style="border:0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          tabindex="0"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
@@ -134,22 +159,11 @@
   </section>
 
   <section id="gallery">
-    <h2>Photo Gallery</h2>
-    <div class="gallery-grid">
-      <img src="gallery/gallery1.jpg" alt="Gallery 1" class="gallery-img"/>
-      <img src="gallery/gallery2.jpg" alt="Gallery 2" class="gallery-img"/>
-      <img src="gallery/gallery3.jpg" alt="Gallery 3" class="gallery-img"/>
-      <img src="gallery/gallery4.jpg" alt="Gallery 4" class="gallery-img"/>
-      <img src="gallery/gallery5.jpg" alt="Gallery 5" class="gallery-img"/>
-      <img src="gallery/gallery6.jpg" alt="Gallery 6" class="gallery-img"/>
-      <img src="gallery/gallery7.jpg" alt="Gallery 7" class="gallery-img"/>
-      <img src="gallery/gallery8.jpg" alt="Gallery 8" class="gallery-img"/>
-      <img src="gallery/gallery9.jpg" alt="Gallery 9" class="gallery-img"/>
-      <img src="gallery/gallery10.jpg" alt="Gallery 10" class="gallery-img"/>
-      <img src="gallery/gallery11.jpg" alt="Gallery 11" class="gallery-img"/>
-      <img src="gallery/gallery12.jpg" alt="Gallery 12" class="gallery-img"/>
-    </div>
-  </section>
+  <h2>Photo Gallery</h2>
+  <div class="carousel-frame">
+    <div class="carousel-track" id="auto-carousel"></div>
+  </div>
+</section>
 
  <section id="contact">
   <div class="contact-form">

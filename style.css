@@ -1,14 +1,19 @@
+/* Reset básico e configurações gerais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 /* ======================
    GLOBAL STYLES
 ====================== */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.6;
-  background: #f5f7fa;
-  color: #283c5a;
+html, body {
+  width: 100%;
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 /* ======================
@@ -49,11 +54,11 @@ nav a:hover {
 
 .main-nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 10px 0;
-  position: relative;
+  padding: 1rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .main-nav a {
@@ -71,6 +76,36 @@ nav a:hover {
   vertical-align: middle;
 }
 
+.main-nav img {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.more-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #005baa;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.more-button:hover {
+  background-color: #003f7d;
+}
 
 /* ======================
         DROPDOWN
@@ -481,14 +516,14 @@ section h2 {
         LOCATION
 ====================== */
 #location {
-  width: 100%;
-  margin: 100px;
-  padding: 0;
   position: relative;
+  margin: 0 auto;
+  width: 100%;
   background-image: url('pictures/Church.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 2rem 0;
   overflow: hidden;
 }
 
@@ -508,11 +543,11 @@ section h2 {
 }
 
 #location .location-info {
-  width: 100%;
-  padding: 0 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  border-radius: 8px;
   text-align: center;
-  color: white;
-  box-sizing: border-box;
 }
 
 #location .location-info h2,
@@ -522,8 +557,11 @@ section h2 {
 }
 
 .location-info {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  border-radius: 8px;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 .map-container {
@@ -595,6 +633,114 @@ section h2 {
 
 .text-button-wrapper .btn-click-here:hover {
   background-color: #3a5a99; /* tom de azul um pouco mais claro ao passar o mouse */
+}
+
+#gallery {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.carousel-frame {
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: max-content;
+}
+
+.carousel-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.carousel-track img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-img {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-container {
+  position: relative;
+  margin: 2cm auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  flex: 1;
+  margin: 0 2cm;
+}
+
+.carousel {
+  display: flex;
+  gap: 0; /* sem espaço entre as imagens */
+  scroll-behavior: auto; /* scroll controlado via JS */
+}
+
+.carousel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.3s;
+  border-radius: 4px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-btn {
+  margin-left: 1rem;
+}
+
+.right-btn {
+  margin-right: 1rem;
+}
+
+.gallery-img {
+  flex: 0 0 auto;
+  width: 100vw; /* cada imagem ocupa a tela toda */
+  height: 300px;
+  object-fit: cover;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
 }
 
 /* ========================== */
@@ -841,3 +987,137 @@ footer {
     font-size: 1.8em;
   }
 }
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  header {
+    padding: 0.5rem 0;
+  }
+
+  .logo {
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero {
+    height: 280px;
+    padding: 1rem;
+  }
+
+  .hero h1,
+  .hero-highlight {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .more-button {
+    padding: 6px 12px;
+    font-size: 0.95rem;
+  }
+
+  .ministries-grid,
+  .programming-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .ministry-card,
+  .program-card {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-img {
+    height: 160px;
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .map-container {
+    padding: 0 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-block {
+    padding: 0;
+    min-width: 100%;
+  }
+
+  .footer-center,
+  .footer-right {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .subscribe-form {
+    width: 100%;
+  }
+
+  .subscribe-form input[type="email"] {
+    max-width: 100%;
+  }
+
+  .text-button-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .text-button-wrapper .btn-click-here {
+    width: 100%;
+    max-width: 250px;
+    font-size: 1rem;
+  }
+}
+

@@ -217,7 +217,7 @@ nav.main-nav a:hover {
   justify-content: center;
   text-align: center;
   height: 400px;
-  padding: 0;
+  padding: 80px 20px;
   width: 100%;
   margin: 0;
   background-image: url('pictures/Stage_Bethany.jpg');
@@ -275,14 +275,17 @@ section.hero {
   position: relative;
   height: 6.5rem;
   justify-content: center;
+  white-space: normal;
+  word-break: keep-all; /* evita quebra estranha */
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .divider {
-  width: 2px;
-  height: 4rem;
-  background: #fff;
-  margin: 0.2rem 0;
-  display: block;
+  display: none; /* se quiser algum separador visual, altere aqui */
 }
 
 .btn-main {
@@ -327,6 +330,32 @@ section h2 {
   font-size: 1.2rem;
   color: #444;
   margin-bottom: 2rem;
+}
+
+#about-links {
+  display: none; /* padrão: escondido */
+}
+
+/* Em telas até 768px, mostra os links */
+@media (max-width: 768px) {
+  #about-links {
+    display: block;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  #about-links a {
+    margin: 0 15px;
+    font-weight: bold;
+    color: #283c5a;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+
+  #about-links a:hover {
+    text-decoration: underline;
+  }
 }
 
 /* ======================
@@ -945,7 +974,7 @@ footer {
   }
 
   .hero p {
-    font-size: 1rem;
+  font-size: 1.2rem;
   }
 
   section {
@@ -1203,3 +1232,20 @@ footer {
   }
 }
 
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+    gap: 6px;
+  }
+}
+
+/* Remove qualquer caractere extra de pseudo-elementos no mobile */
+@media (max-width: 768px) {
+  .hero-title::before,
+  .hero-title::after,
+  .hero-highlight::before,
+  .hero-highlight::after {
+    content: none !important;
+  }
+}

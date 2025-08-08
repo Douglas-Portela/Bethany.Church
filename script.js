@@ -57,3 +57,21 @@ document.addEventListener("DOMContentLoaded", () => {
   carouselTrack.addEventListener('mouseenter', () => clearInterval(autoScroll));
   carouselTrack.addEventListener('mouseleave', startAutoScroll);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLeft = document.querySelector('.nav-left');
+  const navRight = document.querySelector('.nav-right');
+
+  menuToggle.addEventListener('click', () => {
+    // Alterna os menus da esquerda e direita
+    const isVisible = navLeft.style.display === 'flex';
+    if (isVisible) {
+      navLeft.style.display = 'none';
+      navRight.style.display = 'none';
+    } else {
+      navLeft.style.display = 'flex';
+      navRight.style.display = 'flex';
+    }
+  });
+});
